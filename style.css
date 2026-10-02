@@ -1,169 +1,291 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-
 :root {
-    --primary-text-color: #183b56;
-    --secondary-text-color: #577592;
-    --accent-color: #2294ed;
-    --accent-color-dark : #1d69a3;
+    --text-color: #1b3a4b;
+    --accent-color: #2b6cb0;
+    --bg-color: #f4f6f8;
 }
 
-body{
-    font-family: "Poppins",sans-serif;
-    color: var(--primary-text-color);
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
-
-p{
-    font-family: "Roboto",sans-serif;
-    color: var(--secondary-text-color);
-    line-height:  1.4rem; ;
-
-}
-
-
-a{
+a {
     text-decoration: none;
+    color: inherit;
 }
-
 
 ul {
     list-style: none;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-/*Code Credits to Gitanshu Hatar , date - 5/09/2024*/
-
-
-.container{
+.container {
     max-width: 1180px;
-    margin-inline : auto;
-    overflow: hidden;
+    margin-inline: auto;
+    width: 100%;
 }
-
 
 nav {
-    background-color: #f3faff;
-    box-shadow: 0 0 4px #13426b;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(27, 58, 75, 0.08);
     position: fixed;
-    top: 0; 
-    z-index: 99;
+    top: 0;
     left: 0;
     right: 0;
+    z-index: 99;
 }
 
-.main-nav{
+.main-nav {
     justify-content: space-between;
-    padding-block: 8px;
+    gap: 16px;
+    padding: 12px 20px;
+    flex-wrap: wrap;
 }
 
-
-.team-logo img{
-    width: 160px;
-    height: 80px;
+.team-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
 }
 
-
-.nav-links ul{
+.nav-links ul {
     gap: 18px;
+    flex-wrap: wrap;
 }
 
-
-.hover-link{
+.hover-link {
     cursor: pointer;
+    font-size: 15px;
 }
 
-
-.hover-link:hover{
-    color: var(--secondary-text-color);
-}
-
-
-.hover-link:active{
-    color: red;
-}
-.nav-item.active {
+.hover-link:hover {
     color: var(--accent-color);
 }
 
+.nav_item.active {
+    color: var(--accent-color);
+}
+
+.nav-right {
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
 .search-bar {
-    height: 32px;
     gap: 8px;
 }
 
-.news-input{
-    width: 200px;
-    height: 100%;
+.news-input {
+    width: 180px;
+    height: 36px;
     padding-inline: 12px;
-    border-radius: 4px;
-    border: 2px solid #224666 ;
-    font-family: "Roboto",sans-serif;
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
+    font-family: "Poppins", sans-serif;
 }
-.search-button{
+
+.search-button,
+.auth-btn {
     background-color: var(--accent-color);
-    color: white;
-    padding: 8px 24px;
-    border :none;
-    border-radius: 3px;
+    color: #ffffff;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    font-family: "Roboto",sans-serif;
-
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
 }
 
-.search-button:hover{
-    background-color: var(--accent-color-dark);
+.search-button:hover,
+.auth-btn:hover {
+    opacity: 0.9;
 }
 
-main{
-    padding-block: 20px;
-    margin-top: 100px;
+a.auth-btn {
+    display: inline-block;
 }
-.cards-container{
+
+.user-area {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-label {
+    font-size: 14px;
+}
+
+main {
+    padding: 24px 16px;
+    margin-top: 90px;
+}
+
+.cards-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap:20px;
-    
+    gap: 20px;
 }
-.card{
-    margin: 10px;;
-    width: 350px;
-    min-height: 400px;
-    box-shadow: 0 0 5px #d4ecff;
-    border-radius: 4px;
+
+.card {
+    width: 340px;
+    min-height: 380px;
+    box-shadow: 0 4px 14px rgba(27, 58, 75, 0.08);
+    border-radius: 12px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #ffffff;
     overflow: hidden;
-    transition : all 0.3s ease;
-
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
-.card:hover{
-    box-shadow: 2px 2px 8px #d4ecff;
-    background-color: #f9fdff;
-    transform: translateY(-4px);
 
+.card:hover {
+    box-shadow: 0 8px 18px rgba(27, 58, 75, 0.12);
+    transform: translateY(-3px);
 }
-.card-header img{
+
+.card-header {
+    background: linear-gradient(135deg, #1b3a4b, #2b6cb0);
+}
+
+.card-header img {
     width: 100%;
-    height: 180px;
+    height: 170px;
     object-fit: cover;
-
+    display: block;
 }
-.card-content{
-    padding: 12px;
 
+.card-content {
+    padding: 16px;
 }
-.news-source{
-    margin-block: 12px;;
+
+.card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.news-source {
+    margin-block: 8px;
+    color: var(--accent-color);
+    font-size: 13px;
+}
+
+.news-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4a5d6a;
+}
+
+/* Login page */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(27, 58, 75, 0.08);
+    padding: 28px;
+}
+
+.auth-card h2 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.auth-card label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.auth-card input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 14px;
+    padding: 0 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.auth-switch a {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.auth-message {
+    margin-top: 12px;
+    font-size: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.auth-message.error {
+    color: #c53030;
+}
+
+.auth-message.success {
+    color: #2f855a;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-links ul,
+    .nav-right,
+    .search-bar {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .news-input {
+        flex: 1;
+        width: auto;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    main {
+        margin-top: 140px;
+    }
 }

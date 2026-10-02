@@ -3,47 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The News Center</title>
+    <title>News Bite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <div class="main-nav contanier flex">
-            <a href="#" onclick="reload() " class="team-logo">
-                <img src="logoo.jpg" alt="The Error Squad">
-            </a>
+        <div class="main-nav container flex">
+            <a href="index.html" onclick="reload()" class="team-logo">News Bite</a>
             <div class="nav-links">
                 <ul class="flex">
-                    <li class="hover-link nav_item" id = "Sports" onclick="onNavItemClick('cricket & football')" >Sports </li>
-                    <li class="hover-link nav_item" id = "Politics" onclick="onNavItemClick('Politics')">Politics </li>
-                    <li class="hover-link nav_item" id = "Industry" onclick="onNavItemClick('Industry')">Industry</li>
-                    <li class="hover-link nav_item" id = "Gaming" onclick="onNavItemClick('Gaming')">Gaming</li>
+                    <li class="hover-link nav_item" id="Sports" onclick="onNavItemClick('cricket & football')">Sports</li>
+                    <li class="hover-link nav_item" id="Politics" onclick="onNavItemClick('Politics')">Politics</li>
+                    <li class="hover-link nav_item" id="Industry" onclick="onNavItemClick('Industry')">Industry</li>
+                    <li class="hover-link nav_item" id="Gaming" onclick="onNavItemClick('Gaming')">Gaming</li>
                 </ul>
             </div>
-            <div class="search-bar">
-                <input id="search-text" type="text" class ="news-input" placeholder="Search">
-                <button id="search-button"class="search-button">Search</button>
+            <div class="nav-right flex">
+                <div class="search-bar flex">
+                    <input id="search-text" type="text" class="news-input" placeholder="Search">
+                    <button id="search-button" class="search-button">Search</button>
+                </div>
+                <a href="login.html" id="login-btn" class="auth-btn">Login</a>
+                <div id="user-area" class="user-area">
+                    <span id="user-label"></span>
+                    <button id="logout-btn" class="auth-btn">Logout</button>
+                </div>
             </div>
         </div>
     </nav>
+
     <main>
-        <div class="cards-container contanier flex" id="cards-container">
-        </div>
+        <div class="cards-container container flex" id="cards-container"></div>
     </main>
+
     <template id="template-news-card">
         <div class="card">
             <div class="card-header">
-                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                <img src="" alt="news-image" id="news-img">
             </div>
             <div class="card-content">
-                <h3 id="news-title">This is The Title </h3>
-                <h6 class ="news-source" id="news-source">End Gadget proo</h6>
-                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque optio maxime deserunt facere vero officiis quisquam nihil dolorum. Impedit earum pariatur consequuntur blanditiis autem a atque libero voluptas ipsa cum.</p>
+                <h3 id="news-title">Title</h3>
+                <h6 class="news-source" id="news-source">Source</h6>
+                <p class="news-desc" id="news-desc">Description</p>
             </div>
         </div>
     </template>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
